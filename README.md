@@ -6,6 +6,8 @@ Birdanoid was developed as a gameplay-focused project centered around smooth mov
 
 The project uses a custom movement controller rather than relying entirely on Roblox's default character behavior, allowing movement states and transitions to be handled explicitly.
 
+![Birdanoid gameplay](assets/birdanoid.gif)
+
 ## Architecture
 
 - **State-driven movement** — player behavior is separated into Grounded, Air, and Flying states.
