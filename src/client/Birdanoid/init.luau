@@ -1,10 +1,10 @@
-local Controller = {}
-Controller.__index = Controller
+local Birdanoid = {}
+Birdanoid.__index = Birdanoid
 
 local RunService = game:GetService("RunService")
 
-function Controller.new(model)
-	local self = setmetatable({}, Controller)
+function Birdanoid.new(model)
+	local self = setmetatable({}, Birdanoid)
 	self.model = model
 		
 	-- Must be in this order
@@ -19,7 +19,7 @@ function Controller.new(model)
 	return self
 end
 
-function Controller:Start()
+function Birdanoid:Start()
 	if self.loop then self.loop:Disconnect() end
 	self.loop = RunService.RenderStepped:Connect(function(dt)
 		
@@ -34,20 +34,20 @@ function Controller:Start()
 	end)
 end
 
-function Controller:Stop()
+function Birdanoid:Stop()
 	if self.loop then
 		self.loop:Disconnect()
 		self.loop = nil
 	end
 end
 
-function Controller:GetModel()
+function Birdanoid:GetModel()
 	return self.model
 end
 
-function Controller:GetRoot()
+function Birdanoid:GetRoot()
 	--return self.model:FindFirstChild("Root")
     return self.model -- only in this specific case, where model <=> part <=> root
 end
 
-return Controller
+return Birdanoid
