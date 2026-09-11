@@ -2,6 +2,7 @@ local Birdanoid = {}
 Birdanoid.__index = Birdanoid
 
 local RunService = game:GetService("RunService")
+local ContextType = require(script.ContextType)
 
 function Birdanoid.new(model)
 	local self = setmetatable({}, Birdanoid)
@@ -23,7 +24,7 @@ function Birdanoid:Start()
 	if self.loop then self.loop:Disconnect() end
 	self.loop = RunService.RenderStepped:Connect(function(dt)
 		
-		local ctx = {}
+		local ctx = {} :: ContextType.StateContext
 		
 		-- must be in the same order as init
 		self.input:Step(dt, ctx)
