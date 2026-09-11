@@ -25,13 +25,12 @@ function Controller:Start()
 		
 		local ctx = {}
 		
-		-- order is important
+		-- must be in the same order as init
 		self.input:Step(dt, ctx)
 		self.ground:Step(dt, ctx)
 		self.state:Step(dt, ctx)
 		self.movement:Step(dt, ctx)
 		self.orientation:Step(dt, ctx)
-		self.visuals:Step(dt, ctx)		
 	end)
 end
 
