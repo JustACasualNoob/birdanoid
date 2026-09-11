@@ -52,7 +52,7 @@ function StateMachine:Step(_, ctx)
 		newState = "Flying"
 	end
 	
-	print(newState)
+	--print(newState)
 	
 	self.state = newState
 	ctx.state = newState
